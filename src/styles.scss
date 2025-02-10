@@ -28,32 +28,7 @@ html body {
     background-color: white !important;
 }
 
-// Button Custom
-.mdc-button {
-    color: #fff !important;
-    font-weight: 600 !important;
-    background-color: #0E817F !important;
-    border: 1px solid #0E817F !important;
-    letter-spacing: 1px !important;
-    font-weight: 400 !important;
-    &:hover {
-        color: #0E817F !important;
-        background-color: #fff !important;
-    }
-}
-.mdc-button.bg-danger {
-    color: #fff !important;
-    font-weight: 600 !important;
-    background-color: #EF3826 !important;
-    border: 1px solid #EF3826 !important;
-    letter-spacing: 1px !important;
-    font-weight: 400 !important;
 
-    &:hover {
-        color: #EF3826 !important;
-        background-color: #fff !important;
-    }
-}
 .mdc-button.bg-gray-500 {
     color: #000000DE !important;
     font-weight: 600 !important;
