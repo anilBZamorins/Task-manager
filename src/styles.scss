@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+html body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #000;
+    background: #F5F6FA;
+}
+
+.router-link {
+    color: #0E817F !important
+}
+
+.mdc-text-field--filled {
+    background-color: white !important;
+}
+
+.custom-background {
+    background-color: white !important;
+}
+
+.custom-background .mat-form-field-wrapper {
+    background-color: white !important;
+}
+
+// Button Custom
+.mdc-button {
+    color: #fff !important;
+    font-weight: 600 !important;
+    background-color: #0E817F !important;
+    border: 1px solid #0E817F !important;
+    letter-spacing: 1px !important;
+    font-weight: 400 !important;
+    &:hover {
+        color: #0E817F !important;
+        background-color: #fff !important;
+    }
+}
+.mdc-button.bg-danger {
+    color: #fff !important;
+    font-weight: 600 !important;
+    background-color: #EF3826 !important;
+    border: 1px solid #EF3826 !important;
+    letter-spacing: 1px !important;
+    font-weight: 400 !important;
+
+    &:hover {
+        color: #EF3826 !important;
+        background-color: #fff !important;
+    }
+}
+.mdc-button.bg-gray-500 {
+    color: #000000DE !important;
+    font-weight: 600 !important;
+    background-color: #F5F5F5 !important;
+    border: 1px solid #949494 !important;
+    letter-spacing: 1px !important;
+    font-weight: 400 !important;
+    &:hover {
+        color: #fff !important;
+        background-color: #000000DE !important;
+    }
+}
+.mdc-button.bg-light-200 {
+    color:#E58022 !important;
+    font-weight: 600 !important;
+    background-color: #f3eee4 !important;
+    border: 1px solid #949494 !important;
+    letter-spacing: 1px !important;
+    // text-transform: uppercase !important;
+    font-weight: 400 !important;
+
+    &:hover {
+        color: #e72f1e !important;
+        background-color: #fff !important;
+    }
+}
+.mdc-text-field{
+    padding: 0 !important;
+    .mdc-text-field--filled {
+        height: 48px !important;
+    }
+    .mat-mdc-form-field-focus-overlay{
+        background-color: transparent !important;
+    }
+    .mat-mdc-form-field-infix {
+        min-height: 48px !important;
+        padding-top: 16px !important;
+        padding-bottom: 0 !important;
+    }
+    .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+        top: 35px !important;
+    }
+    .mat-mdc-form-field-input-control.mat-mdc-form-field-input-control {
+        font-size: 14px !important;
+    }
+    .mat-mdc-paginator {
+        background: transparent !important;
+    }
+    
+    .mat-mdc-paginator-container {
+        justify-content: space-between !important;
+        padding: 0 !important;
+    }
+    
+    .mat-mdc-paginator-range-label {
+        display: none !important;
+    }
+    .mat-mdc-paginator-range-actions {
+        border: 1px solid #d5d5d5 !important;
+        border-radius: 8px !important;
+        width: 60px !important;
+        height: 30px !important;
+        justify-content: space-evenly !important;
+    
+        .mat-mdc-icon-button.mat-mdc-button-base {
+            --mdc-icon-button-state-layer-size: 20px !important;
+            padding: 0 !important;
+            position: relative;
+            top: -2px;
+        }
+    }
+    .mat-mdc-paginator-range-actions {
+    border: 1px solid #d5d5d5 !important;
+    border-radius: 8px !important;
+    width: 60px !important;
+    height: 30px !important;
+    justify-content: space-evenly !important;
+
+    .mat-mdc-icon-button.mat-mdc-button-base {
+        --mdc-icon-button-state-layer-size: 20px !important;
+        padding: 0 !important;
+        position: relative;
+        top: -2px;
+    }
+}
+.mat-mdc-paginator-page-size-label {
+    margin: 0 !important;
+    display: none;
+}
+.mat-mdc-paginator-container{
+    .mdc-text-field .mat-mdc-form-field-infix {
+        min-height: 30px !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .mat-mdc-select-trigger{
+        padding: 0 10px !important;
+    }
+}
+
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
