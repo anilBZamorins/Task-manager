@@ -158,3 +158,34 @@ html body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+    --bg-color: #F5F6FA;
+    --text-color: #000;
+    --border-color: #ccc;
+    --input-bg: #fff;
+  }
+  
+  // Dark mode styles
+  .dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --border-color: #333;
+    --input-bg: #1E1E1E;
+  }
+  
+  // Apply colors dynamically
+  html body {
+    background: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  input, select {
+    background: var(--input-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+  }
+  
+  .bg-primary {
+    background-color: var(--text-color) !important;
+    color: var(--bg-color) !important;
+  }

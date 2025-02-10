@@ -7,15 +7,28 @@
         <div class="flex relative w-full md:w-1/3 lg:w-2/5">
             <input type="text" placeholder="Search tasks..." class="border w-full border-gray-300 focus:outline-none focus:border-primary rounded-md h-10 pr-10 pl-4 text-sm" (keyup)="applyFilter($event)">
         </div>
+        <div class="flex items-center space-x-2 w-full md:w-1/3 lg:w-1/5">
+            <label class="whitespace-nowrap">Status:</label>
+            <select [(ngModel)]="filterBy" (change)="applyFilters()" class="border rounded px-2 h-10 py-1 w-full">
+                <option value="all">All</option>
+                <option value="Completed">Completed</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </div>
+        <div class="flex items-center space-x-4">
+            <label class="font-semibold">Dark Mode:</label>
+            <mat-slide-toggle (change)="toggleDarkMode($event)"></mat-slide-toggle>
+        </div>
         <button (click)="openTaskDialog()" mat-flat-button class="bg-primary text-white text-sm font-semibold border border-primary hover:bg-white px-4 rounded-md hover:text-primary">
             <span class="md:block hidden">ADD TASK</span>
         </button>
     </div>
     
     <section class="hidden md:block" tabindex="0">
-        <table class="rounded-md w-full" mat-table [dataSource]="dataSource" matSort>
+        <table cdkDropList #table (cdkDropListDropped)="drop($event)" cdkDropListData="dataSource" class="rounded-md w-full" mat-table [dataSource]="dataSource" matSort>
+
             <!-- ID Column -->
-            <ng-container matColumnDef="id">
+            <ng-container matColumnDef="id" sticky>
                 <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-left bg-light">#</th>
                 <td mat-cell *matCellDef="let task; index as i">{{ i + 1 }}</td>
             </ng-container>
@@ -47,6 +60,11 @@
                     </mat-chip>
                 </td>
             </ng-container>
+
+            <ng-container matColumnDef="dueDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header class="bg-light">Due Date</th>
+                <td mat-cell *matCellDef="let task"> {{ task.dueDate }} </td>
+            </ng-container>
             
             <!-- Actions Column -->
             <ng-container matColumnDef="actions">
@@ -55,18 +73,18 @@
                     <button mat-icon-button color="primary" (click)="editTask(task)">
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button mat-icon-button color="warn" (click)="deleteTask(task)">
+                    <button mat-icon-button color="warn" (click)="softDeleteTask(task.id)">
                         <mat-icon>delete</mat-icon>
                     </button>
                 </td>
             </ng-container>
             
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" cdkDrag [cdkDragData]="row"></tr>
         </table>
     </section>
     
-    <!-- <div class="mt-3">
+    <div class="mt-1">
         <mat-paginator [pageSizeOptions]="[5, 10, 20]" aria-label="Select page of tasks"></mat-paginator>
-    </div> -->
+    </div>
 </div>
